@@ -1,0 +1,60 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-align:center;
+    color:#999;
+    height:100%;
+}
+
+a {
+	font-size: 12px;
+	font-weight: bold;
+    color: #38CB7C;
+    text-decoration: none;
+}
+
+input {
+    width:300px;
+    height:40px;
+    border-radius:10px;
+    border:0px none;
+    background:#eee;
+    padding:0px 20px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+*:focus {
+    outline: none;
+}
+
+.header {
+    background-color: #eee;
+}
+
+.outputbox {
+    background-color: #eee;
+}
+
+.status {
+    background-color: #fff;
+}
+
+.inputbox {
+    background-color: #fff;
+}
+
+.relayx {
+    background: #0E65FF;
+}
+.handcash {
+    background: #38CB7C;
+}
+.paymail {
+    background: #e94c3b;
+}
+
+.card {
+    height: auto;
+    background-color: #ffffff;
+    margin:0 auto;
+  }
