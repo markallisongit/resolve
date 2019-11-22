@@ -8,12 +8,11 @@ body {
 a {
 	font-size: 12px;
 	font-weight: bold;
-    color: #38CB7C;
     text-decoration: none;
 }
 
 input {
-    width:300px;
+    width:340px;
     height:40px;
     border-radius:10px;
     border:0px none;
@@ -33,10 +32,16 @@ input {
 
 .outputbox {
     background-color: #eee;
+    height: 220px;
+}
+
+.qrcode {
+
 }
 
 .status {
     background-color: #fff;
+    padding: 5px;
 }
 
 .inputbox {
