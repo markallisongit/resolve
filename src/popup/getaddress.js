@@ -1,11 +1,7 @@
 window.onload = function () {
     hideDiv('status');
     hideDiv('address');
-/*     var head = document.getElementsByTagName("head")[0].innerHTML;
-    if (head.indexOf("moneybutton") === -1) {
-        console.log("Loading Moneybutton");
-        loadMoneyButton();
-    }     */
+
     // return key submits
     document.getElementById("handletext").addEventListener("keyup", function (e) {
         e.preventDefault();
@@ -95,35 +91,4 @@ function hideDiv (div){
 
 function clearOutput (){
     document.getElementById('address').style.display=('none');
-}
-
-function loadMoneyButton() {
-    var x = document.createElement("script");
-    x.src = "https://api.moneybutton.com/moneybutton.js";
-    document.getElementsByTagName("head")[0].appendChild(x); // Insert MB script into document head
-    setTimeout(function () { renderMoneyButton("0.25") }, 100);
-}
-
-function renderMoneyButton(amount) {
-    if (typeof (moneyButton) === "undefined") {
-        setTimeout(function () { renderMoneyButton(amount); }, 100);
-        return; // If MoneyButton isn't defined, try again in 100 ms
-    }
-    if (typeof (moneyButton.render) === "undefined") {
-        setTimeout(function () { renderMoneyButton(amount); }, 100);
-        return; // If render isn't defined, try again in 100 ms
-    }
-    const div = document.getElementById('moneybutton')
-    moneyButton.render(div, {
-        amount: amount,
-        to: "marquee@moneybutton.com",
-        amount: "0.02",
-        currency: "USD",
-        label: "Tip",
-        clientIdentifier: "4f07e9e4d6322bed4a8bcffe5aeb9ce4",
-        buttonId: "1539184004542",
-        buttonData: "{}",
-        type: "tip",
-        editable: false
-    }); // Render MB
 }
