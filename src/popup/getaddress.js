@@ -1,11 +1,11 @@
 window.onload = function () {
     hideDiv('status');
     hideDiv('address');
-    var head = document.getElementsByTagName("head")[0].innerHTML;
+/*     var head = document.getElementsByTagName("head")[0].innerHTML;
     if (head.indexOf("moneybutton") === -1) {
         console.log("Loading Moneybutton");
         loadMoneyButton();
-    }    
+    }     */
     // return key submits
     document.getElementById("handletext").addEventListener("keyup", function (e) {
         e.preventDefault();

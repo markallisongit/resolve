@@ -63,3 +63,11 @@ input {
 .moneybutton {
     margin: 10px;
 }
+
+iframe:focus {
+    outline: none;
+  }
+  
+  iframe[seamless] {
+    display: block;
+  }
