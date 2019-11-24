@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Overpass+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans" >
 
     <link rel="stylesheet" href="https://api.moneybutton.com/moneybutton.js">
 
@@ -23,26 +22,25 @@
 </head>
 
 <body>
-    <div class="card header">
-        Resolve
+    <div class="header">
+            <img src="../assets/bitcoin.svg" style="width:25px;">
+        resolve
     </div>
-    <div class="inputbox card-body">
+    <div class="inputbox">
         <input required id="handletext" type="text" placeholder="Enter a $handle, 1handle, or Paymail"
-            spellcheck="false" pattern="[\$|1]\w{3,30}|\w+\@\w+\.\w{2,26}" maxlength="100" />
+            spellcheck="false"  maxlength="100" />
     </div>
-    <div class="status card-body" id="status">
-
-    </div>
-    <div class="outputbox card-body" id="address">
+    <div class="status alert mx-auto small" id="status"></div>
+    <div class="outputbox h-25" id="address">
         <div id="outputbox"></div>
+        <p></p>
         <div id="qrcode"></div>
     </div>
-
-    <div class="row footer card-footer">
+    <div class="row footer small">
         <div class="col">Powered by <a href="https://polynym.io/"><img src="../assets/polynym.svg"
                     style="width:75px;"></a></div>
         <div class="col"><a href="https://github.com/markallisongit/resolve"><img src="../assets/github-text.svg"
-                    style="width:75px;"></a></div>
+                    style="width:50px;"></a></div>
 
         <div class="col" id="moneyButton"></div>
     </div>

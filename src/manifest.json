@@ -1,18 +1,19 @@
 {
-    "manifest_version": 2,
-    "name": "Resolve",
-    "version": "0.1",
-  
-    "description": "Get a BSV address for $handle, 1handle or Paymail",
-    "browser_action": {
-      "default_title": "Resolve address converter",
-      "default_popup": "./popup/popup.html" 
-    },
-    "short_name": "Resolve",
-    "content_security_policy": "script-src 'self' https://api.polynym.io/getAddress ; object-src 'self'",  
-    "content_security_policy": "script-src 'self' https://api.polynym.io/getAddress ; object-src 'self'", 
-    "permissions": [
-      "storage",
-      "clipboardWrite"
-    ]
-  }
+  "manifest_version": 2,
+  "name": "Resolve",
+  "version": "0.1",
+  "description": "Get a BSV address for $handle, 1handle or Paymail",
+  "browser_action": {
+    "default_title": "Resolve address converter",
+    "default_popup": "./popup/popup.html",
+    "default_icon": {
+      "48": "assets/bitcoin.png"
+    }
+  },
+  "short_name": "Resolve",
+  "content_security_policy": "script-src 'self' https://api.polynym.io/getAddress ; object-src 'self'",
+  "permissions": [
+    "storage",
+    "clipboardWrite"
+  ]
+}

@@ -1,13 +1,15 @@
 window.onload = function () {
     // return key submits
     document.getElementById("handletext").addEventListener("keyup", function (e) {
+        document.getElementById('status').style.display='none';  
         event.preventDefault();
         if ((event.keyCode > 47 && event.keyCode < 112) || event.keyCode === 8 || event.keyCode === 46) {
             document.getElementById('outputbox').innerHTML = null;
             document.getElementById('qrcode').innerHTML = null;
 
         } else if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
-            updateStatus("Loading");
+            document.getElementById('status').style.display='block'
+            updateStatus("Resolving...", 'info');
             if (typeof (Storage) !== "undefined") {
                 var userinput = document.getElementById('handletext').value.trim();
                 localStorage.setItem("handle", userinput);
@@ -34,45 +36,66 @@ window.onload = function () {
 }
 
 function updateStatus (message, type) {
+    console.log(message);
+    console.log(type);
+    document.getElementById('status').classList.remove("alert-danger");
     var alertClass;
     switch (type) {
+        case 'info':
+            alertClass = "alert-info";
+            break;
         case 'error':
             alertClass = "alert-danger";
             break;
         case 'warning':
             alertClass = "alert-warning";
             break;
+
         default:
             alertClass = "alert-info";
     }
 
     document.getElementById('status').innerHTML = message;
-    document.getElementById('status').classList.add("alert");
+    // document.getElementById('status').classList.add("alert");
     document.getElementById('status').classList.add(alertClass);
-
 }
+
 function getAddress(handle) {
     var req = new XMLHttpRequest();
+    var address;
+    var error;
     req.onreadystatechange = function () {
         if (req.readyState === 4) {
+            var response = req.responseText;
+            console.log(response);
+            var json = JSON.parse(response);
+            address = json['address'];
+            error = json['error'];
+            console.log(address);
+            console.log(error);
+
             if (req.status === 200) {
-                var response = req.responseText;
-                var json = JSON.parse(response);
-                address = json['address']
-                document.getElementById('qrcode').innerHTML = "<img src=\"https://api.qrserver.com/v1/create-qr-code/?data=" + address + "&amp;size=150x150\" /img>"
-                document.getElementById('outputbox').innerHTML = address;
+                if (address) {
+                    document.getElementById('qrcode').innerHTML = "<img src=\"https://api.qrserver.com/v1/create-qr-code/?data=" + address + "&amp;size=150x150\" /img>"
+                    document.getElementById('outputbox').innerHTML = address;                      
+                    document.getElementById('status').style.display='none';
+
+                } else  {
+                    console.log(error);
+                    updateStatus(error, 'error');    
+                }             
             }
-            else if (req.status === 404) {
-                updateStatus('$handle does not exist', 'error');
+            else if (req.status === 400) {
+                updateStatus(error, 'error');
                 return;
             }
             else {
+                // {"error":"$handle not found"}
                 updateStatus(req.statusText, 'error');
                 return;
             }
         }
     };
-
     req.open('GET', 'https://api.polynym.io/getAddress/' + handle);
     req.send(null);
 }
