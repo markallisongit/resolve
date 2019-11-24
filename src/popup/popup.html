@@ -6,16 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans" >
-
-    <link rel="stylesheet" href="https://api.moneybutton.com/moneybutton.js">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans">
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
-    <!-- Add icon library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" type="text/css" href="popup.css">
     <script src="getaddress.js"></script>
@@ -23,25 +17,32 @@
 
 <body>
     <div class="header">
-            <img src="../assets/bitcoin.svg" style="width:25px;">
+        <img src="../assets/bitcoin.svg" style="width:25px;">
         resolve
     </div>
+
     <div class="inputbox">
-        <input required id="handletext" type="text" placeholder="Enter a $handle, 1handle, or Paymail"
-            spellcheck="false"  maxlength="100" />
+        <input required id="handletext" type="text" placeholder="Enter a $handle, 1handle, or PayMail"
+            spellcheck="false" maxlength="100" />
     </div>
-    <div class="status alert mx-auto small" id="status"></div>
-    <div class="outputbox h-25" id="address">
+    <div class="status alert mx-auto small" id="status">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    <div class="outputbox" id="address">
         <div id="outputbox"></div>
         <p></p>
         <div id="qrcode"></div>
     </div>
-    <div class="row footer small">
-        <div class="col">Powered by <a href="https://polynym.io/"><img src="../assets/polynym.svg"
-                    style="width:75px;"></a></div>
-        <div class="col"><a href="https://github.com/markallisongit/resolve"><img src="../assets/github-text.svg"
-                    style="width:50px;"></a></div>
 
-        <div class="col" id="moneyButton"></div>
+    <div class="footer small">
+        <div class="moneybutton" id="moneybutton"></div>
+        <div class="float-left">Powered by <a href="https://polynym.io/"><img src="../assets/polynym.svg"
+                    style="width:75px;"></a>
+        </div>
+
+        <div class="float-right"><a href="https://github.com/markallisongit/resolve"><img
+                    src="../assets/github-text.svg" style="width:50px;"></a></div>
+
     </div>
+
 </body>

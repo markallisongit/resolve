@@ -11,9 +11,9 @@
     }
   },
   "short_name": "Resolve",
-  "content_security_policy": "script-src 'self' https://api.polynym.io/getAddress ; object-src 'self'",
+  
+  "content_security_policy": "script-src 'self' https://api.moneybutton.com ; object-src 'self'", 
   "permissions": [
-    "storage",
-    "clipboardWrite"
+    "storage"
   ]
 }

@@ -12,7 +12,7 @@ a {
 }
 
 input {
-    width:340px;
+    width:350px;
     height:40px;
     border-radius:10px;
     border:0px none;
@@ -34,10 +34,15 @@ input {
     padding: 5px;
 }
 
+.footer {
+    padding: 5px;
+}
+
 .outputbox {
     background-color: #eee;
     height: 220px;
     padding: 20px;
+    font-weight: bold;
 }
 
 .qrcode {
@@ -48,24 +53,13 @@ input {
     padding: 5px;
     width: 200px;
     border-radius:10px;
+    height: 30px;
 }
 
 .inputbox {
     background-color: #fff;
 }
 
-.relayx {
-    background: #0E65FF;
+.moneybutton {
+    margin: 10px;
 }
-.handcash {
-    background: #38CB7C;
-}
-.paymail {
-    background: #e94c3b;
-}
-
-.card {
-    height: auto;
-    background-color: #ffffff;
-    margin:0 auto;
-  }
