@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Resolve",
-  "version": "0.11",
+  "version": "0.12",
   "description": "Get a BSV address for $handle, 1handle or Paymail",
   "browser_action": {
     "default_title": "Resolve address converter",
@@ -10,8 +10,7 @@
       "48": "assets/bitcoin.png"
     }
   },
-  "short_name": "Resolve",  
-  "content_security_policy": "script-src 'self' https://maxcdn.bootstrapcdn.com https://api.qrserver.com https://api.polynym.io; object-src 'self'", 
+  "short_name": "resolve",  
   "permissions": [
     "storage"
   ]

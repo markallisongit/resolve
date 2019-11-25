@@ -1,7 +1,6 @@
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    text-align:center;
-    color:#999;
+    color: grey;
     height:100%;
 }
 
@@ -12,37 +11,48 @@ a {
 }
 
 input {
-    width:350px;
+    width: 280px;
     height:40px;
     border-radius:10px;
     border:0px none;
-    background:#eee;
-    padding:0px 20px;
-    font-size: 14px;
+    background:whitesmoke;
+    padding:0px 10px;
+    font-size: small;
     margin: 20px;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+    outline: none;
 }
 
 *:focus {
+
     outline: none;
 }
 
 .header {
-    background-color: #eee;
+    background-color: whitesmoke;
     font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
     font-weight: bolder;
     color: black;
     padding: 5px;
+    text-align:center;
 }
 
 .footer {
+    background-color: whitesmoke;
     padding: 5px;
+    text-align:center;
+    font-size: 12px;
 }
 
 .outputbox {
-    background-color: #eee;
+    background-color: white;
     height: 220px;
     padding: 20px;
     font-weight: bold;
+    color: black;
+    text-align: center;
+    font-size: smaller;
 }
 
 .qrcode {
@@ -56,6 +66,16 @@ input {
     height: 30px;
 }
 
-.inputbox {
-    background-color: #fff;
+.clearfix {
+	clear: both;
+}
+
+.handletype {
+    background-color: whitesmoke;
+    width: 40px;
+    height:40px;
+    border-radius:10px;
+    border:0px none;
+    font-size: 14px;
+    margin: 10px 10px 10px 0;
 }

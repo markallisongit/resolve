@@ -7,6 +7,8 @@ window.onload = function () {
         e.preventDefault();
         if ((e.keyCode > 47 && e.keyCode < 112) || e.keyCode === 8 || e.keyCode === 46) {
             hideDiv('address');
+            checkHandleType();
+                
         } else if (e.keyCode === 13) {  // Enter pressed   
             updateStatus("Resolving...", 'info');
             if (typeof (Storage) !== "undefined") {
@@ -22,6 +24,7 @@ window.onload = function () {
         var handle = this.localStorage.getItem("handle");
         if (handle != null) {
             document.getElementById("handletext").value = handle;
+            checkHandleType();
         }
     }
     document.getElementById("handletext").focus();
@@ -91,4 +94,24 @@ function hideDiv (div){
 
 function clearOutput (){
     document.getElementById('address').style.display=('none');
+}
+
+function checkHandleType () {
+    var handle = document.getElementById('handletext').value.trim()
+    var payMailReg = new RegExp(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/);
+    if (handle.charAt(0) == '$')  {
+        shadeHandle('Handcash');
+    } else if (handle.charAt(0) == '1')  {
+        shadeHandle('RelayX');
+    } 
+}
+
+function shadeHandle (handletype) {
+    if (handletype == 'Handcash') {
+        document.getElementById('handletext').style.backgroundColor = "#38CB7C";
+    } else if (handletype == 'RelayX') {
+        document.getElementById('handletext').style.backgroundColor = "#99b8ff";
+    } else {
+        document.getElementById('handletext').style.backgroundColor = "whitesmoke";
+    }
 }
