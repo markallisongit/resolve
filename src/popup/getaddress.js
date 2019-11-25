@@ -98,12 +98,13 @@ function clearOutput (){
 
 function checkHandleType () {
     var handle = document.getElementById('handletext').value.trim()
-    var payMailReg = new RegExp(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/);
     if (handle.charAt(0) == '$')  {
         shadeHandle('Handcash');
     } else if (handle.charAt(0) == '1')  {
         shadeHandle('RelayX');
-    } 
+    } else {
+        shadeHandle('Paymail');
+    }
 }
 
 function shadeHandle (handletype) {
