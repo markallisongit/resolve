@@ -14,6 +14,8 @@
 
     <link rel="stylesheet" type="text/css" href="popup.css">
     <script src="getaddress.js"></script>
+
+    <script src="qrcode.js"></script>
 </head>
 
 <body>
@@ -29,10 +31,9 @@
 
     <div class="status alert mx-auto small" id="status">
     </div>
-    <div class="outputbox" id="address">
-        <div id="outputbox"></div>
-        <p></p>
-        <div id="qrcode"></div>
+    <div class="outputbox" id="outputbox">
+        <div class="address" id="address"></div>        
+        <div class="qrcode" id="qrcode" ></div>
     </div>
 
     <div class="row footer">

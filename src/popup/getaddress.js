@@ -1,12 +1,12 @@
 window.onload = function () {
     hideDiv('status');
-    hideDiv('address');
+    hideDiv('outputbox');
 
     // return key submits
     document.getElementById("handletext").addEventListener("keyup", function (e) {
         e.preventDefault();
         if ((e.keyCode > 47 && e.keyCode < 112) || e.keyCode === 8 || e.keyCode === 46) {
-            hideDiv('address');
+            hideDiv('outputbox');
             checkHandleType();
                 
         } else if (e.keyCode === 13) {  // Enter pressed   
@@ -67,9 +67,18 @@ function getAddress(handle) {
             if (req.status === 200) {
                 hideDiv('status');
                 if (address) {
-                    document.getElementById('qrcode').innerHTML = "<img src=\"https://api.qrserver.com/v1/create-qr-code/?data=" + address + "&amp;size=150x150\" /img>"
-                    document.getElementById('outputbox').innerHTML = address;                      
-                    document.getElementById('address').style.display=('block');
+                    // document.getElementById('qrcode').innerHTML = "<img src=\"https://api.qrserver.com/v1/create-qr-code/?data=" + address + "&amp;size=150x150\" /img>"
+                    var typeNumber = 0;
+                    var errorCorrectionLevel = 'L';
+                    var qr = qrcode(typeNumber, errorCorrectionLevel);
+                    qr.addData(address);
+                    qr.make();
+                    
+                    document.getElementById('qrcode').innerHTML = qr.createSvgTag(5,0,address);              
+
+                    document.getElementById('address').innerHTML = address;                      
+                    document.getElementById('outputbox').style.display=('block');
+                    
                 } else  {
                     updateStatus(error, 'error');    
                 }             
