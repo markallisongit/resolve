@@ -1,8 +1,14 @@
 {
   "manifest_version": 2,
   "name": "Resolve",
-  "version": "1",
+  "version": "2",
+
   "description": "Get a BSV address for $handle, 1handle or Paymail",
+
+  "icons": {
+    "128": "assets/bitcoin128.png"
+  },
+
   "browser_action": {
     "default_title": "Resolve address converter",
     "default_popup": "./popup/popup.html",

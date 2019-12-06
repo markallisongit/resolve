@@ -1,7 +1,7 @@
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: grey;
-    height:100%;
+    width: 320px;
 }
 
 a {
@@ -41,7 +41,7 @@ input {
 .footer {
     background-color: whitesmoke;
     padding: 5px;
-    text-align:center;
+    text-align:left;
     font-size: 12px;
 }
 
@@ -65,7 +65,7 @@ input {
 
 .status {
     padding: 5px;
-    width: 200px;
+    width: 75%;
     border-radius:10px;
     height: 30px;
 }
